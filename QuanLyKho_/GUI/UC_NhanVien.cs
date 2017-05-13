@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class UC_XuatKho : UserControl
+    public partial class UC_NhanVien : UserControl
     {
-        public UC_XuatKho()
+        public UC_NhanVien()
         {
             InitializeComponent();
-        }
-
-        private void UC_XuatKho_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

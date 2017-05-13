@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,24 @@
     <Compile Include="UC_DSHangHoa.Designer.cs">
       <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_KhachHang.Designer.cs">
+      <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhaCungCap.Designer.cs">
+      <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhanVien.Designer.cs">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NhapKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +103,9 @@
     <Compile Include="UC_XuatKho.Designer.cs">
       <DependentUpon>UC_XuatKho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,9 +114,28 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UC_BaoCao.resx">
       <DependentUpon>UC_BaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_DSHangHoa.resx">
+      <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_KhachHang.resx">
+      <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhaCungCap.resx">
+      <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhanVien.resx">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhapKho.resx">
+      <DependentUpon>UC_NhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_XuatKho.resx">
+      <DependentUpon>UC_XuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +149,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\but.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
