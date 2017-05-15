@@ -10,10 +10,10 @@ namespace DAL
     public class DATA
     {
         #region NCC
-        //public static DataTable get_nhacungcap()
-        //{
-        //    return DBConnect.GetData("get_nhacungcap");
-        //}
+        public static DataTable get_nhacungcap()
+        {
+            return DBConnect.GetData("get_nhacungcap");
+        }
         public static int them_nhacungcap(string ma, string ten, string diachi, int sdt)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -48,10 +48,10 @@ namespace DAL
         #endregion
 
         #region  Khach Hang
-        //public static DataTable get_khachhang()
-        //{
-        //    return DBConnect.GetData("get_khachhang");
-        //}
+        public static DataTable get_khachhang()
+        {
+            return DBConnect.GetData("get_khachhang");
+        }
         public static int them_khachhang(string ma, string ten, int sdt, string diachi)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -86,9 +86,9 @@ namespace DAL
         #endregion
 
         #region  phieu nhap
-        //public static DataTable get_phieunhap()
+        //public static DataTable get_khachhang()
         //{
-        //    return DBConnect.GetData("get_phieunhap");
+        //    return DBConnect.GetData("get_khachhang");
         //}
         public static int them_phieunhap(string ma, string nvma, DateTime ngaynhap, decimal tongtien)
         {
@@ -167,10 +167,10 @@ namespace DAL
         #endregion
 
         #region NhanVien
-        //public static DataTable get_nhanvien()
-        //{
-        //    return DBConnect.GetData("get_nhanvien");
-        //}
+        public static DataTable get_nhanvien()
+        {
+            return DBConnect.GetData("get_nhanvien");
+        }
         public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh, int? sdt, string diachi)
         {
             SqlParameter[] para = new SqlParameter[]

@@ -33,19 +33,17 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.pnND = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.pnND = new System.Windows.Forms.Panel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nhàCungCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.danhSáchHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.doanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnTieuDe.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -96,14 +94,6 @@
             this.pnMenu.Size = new System.Drawing.Size(881, 30);
             this.pnMenu.TabIndex = 1;
             // 
-            // pnND
-            // 
-            this.pnND.BackColor = System.Drawing.Color.White;
-            this.pnND.Location = new System.Drawing.Point(3, 82);
-            this.pnND.Name = "pnND";
-            this.pnND.Size = new System.Drawing.Size(881, 408);
-            this.pnND.TabIndex = 2;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -117,6 +107,14 @@
             this.toolStrip1.Size = new System.Drawing.Size(881, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // pnND
+            // 
+            this.pnND.BackColor = System.Drawing.Color.White;
+            this.pnND.Location = new System.Drawing.Point(3, 82);
+            this.pnND.Name = "pnND";
+            this.pnND.Size = new System.Drawing.Size(881, 408);
+            this.pnND.TabIndex = 2;
             // 
             // toolStripDropDownButton1
             // 
@@ -136,7 +134,7 @@
             // 
             this.nhậpKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.nhậpKhoToolStripMenuItem.Name = "nhậpKhoToolStripMenuItem";
-            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.nhậpKhoToolStripMenuItem.Text = "Nhập Kho";
             this.nhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhoToolStripMenuItem_Click);
             // 
@@ -144,7 +142,7 @@
             // 
             this.xuấtKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.xuấtKhoToolStripMenuItem.Name = "xuấtKhoToolStripMenuItem";
-            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.xuấtKhoToolStripMenuItem.Text = "Xuất Kho";
             this.xuấtKhoToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhoToolStripMenuItem_Click);
             // 
@@ -153,7 +151,6 @@
             this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhàCungCấpToolStripMenuItem,
-            this.kháchHàngToolStripMenuItem,
             this.nhânViênToolStripMenuItem});
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -169,17 +166,12 @@
             this.nhàCungCấpToolStripMenuItem.Text = "Nhà Cung Cấp";
             this.nhàCungCấpToolStripMenuItem.Click += new System.EventHandler(this.nhàCungCấpToolStripMenuItem_Click);
             // 
-            // kháchHàngToolStripMenuItem
-            // 
-            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.kháchHàngToolStripMenuItem.Text = "Khách Hàng";
-            // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
             this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nhânViênToolStripMenuItem.Text = "Nhân Viên";
+            this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton4
             // 
@@ -197,12 +189,12 @@
             this.danhSáchHàngHóaToolStripMenuItem.Name = "danhSáchHàngHóaToolStripMenuItem";
             this.danhSáchHàngHóaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.danhSáchHàngHóaToolStripMenuItem.Text = "Danh Sách Hàng Hóa";
+            this.danhSáchHàngHóaToolStripMenuItem.Click += new System.EventHandler(this.danhSáchHàngHóaToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton3
             // 
             this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.doanhThuToolStripMenuItem,
             this.xNTToolStripMenuItem});
             this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -211,16 +203,10 @@
             this.toolStripDropDownButton3.Text = "Báo Cáo";
             this.toolStripDropDownButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // doanhThuToolStripMenuItem
-            // 
-            this.doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.doanhThuToolStripMenuItem.Text = "Doanh Thu";
-            // 
             // xNTToolStripMenuItem
             // 
             this.xNTToolStripMenuItem.Name = "xNTToolStripMenuItem";
-            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.xNTToolStripMenuItem.Text = "X-N-T";
             // 
             // frmMain
@@ -264,10 +250,8 @@
         private System.Windows.Forms.ToolStripMenuItem xuấtKhoToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem nhàCungCấpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
-        private System.Windows.Forms.ToolStripMenuItem doanhThuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xNTToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
         private System.Windows.Forms.ToolStripMenuItem danhSáchHàngHóaToolStripMenuItem;

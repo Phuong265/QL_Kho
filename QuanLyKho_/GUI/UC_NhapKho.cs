@@ -16,10 +16,5 @@ namespace GUI
         {
             InitializeComponent();
         }
-
-        private void tsbThem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

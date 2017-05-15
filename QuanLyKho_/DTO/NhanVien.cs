@@ -12,9 +12,9 @@ namespace DTO
         private string ma;
         private string ten;
         private bool gioitinh;
-        private DateTime? ngaysinh;
+        private DateTime ngaysinh;
         private string diachi;
-        private int? sdt;
+        private int sdt;
 
         public string Ma
         {
@@ -55,7 +55,7 @@ namespace DTO
             }
         }
 
-        public DateTime? Ngaysinh
+        public DateTime Ngaysinh
         {
             get
             {
@@ -81,7 +81,7 @@ namespace DTO
             }
         }
 
-        public int? Sdt
+        public int Sdt
         {
             get
             {
@@ -94,10 +94,10 @@ namespace DTO
             }
         }
 
-        //public static DataTable Get_NV()
-        //{
-        //    return DATA.get_nhanvien();
-        //}
+        public  DataTable get_nhanvien()
+        {
+            return DATA.get_nhanvien();
+        }
 
         public int Them()
         {
@@ -107,7 +107,7 @@ namespace DTO
         {
             return DATA.sua_nhanvien(ma, ten, ngaysinh, sdt, diachi);
         }
-        public static int Xoa(string ma)
+        public int Xoa(string ma)
         {
             return DATA.xoa_nhanvien(ma);
         }

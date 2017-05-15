@@ -42,10 +42,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNCC = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -68,6 +68,7 @@
             this.tsbThem.Name = "tsbThem";
             this.tsbThem.Size = new System.Drawing.Size(58, 22);
             this.tsbThem.Text = "Thêm";
+            this.tsbThem.Click += new System.EventHandler(this.tsbThem_Click);
             // 
             // tsbSua
             // 
@@ -76,6 +77,7 @@
             this.tsbSua.Name = "tsbSua";
             this.tsbSua.Size = new System.Drawing.Size(52, 22);
             this.tsbSua.Text = "Sửa  ";
+            this.tsbSua.Click += new System.EventHandler(this.tsbSua_Click);
             // 
             // tsbXoa
             // 
@@ -84,6 +86,7 @@
             this.tsbXoa.Name = "tsbXoa";
             this.tsbXoa.Size = new System.Drawing.Size(50, 22);
             this.tsbXoa.Text = "Xóa ";
+            this.tsbXoa.Click += new System.EventHandler(this.tsbXoa_Click);
             // 
             // tsbLuu
             // 
@@ -92,6 +95,7 @@
             this.tsbLuu.Name = "tsbLuu";
             this.tsbLuu.Size = new System.Drawing.Size(53, 22);
             this.tsbLuu.Text = "Lưu  ";
+            this.tsbLuu.Click += new System.EventHandler(this.tsbLuu_Click);
             // 
             // panel1
             // 
@@ -172,29 +176,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NCC";
             // 
-            // dataGridView1
+            // dgvNCC
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(880, 248);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvNCC.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNCC.Location = new System.Drawing.Point(3, 159);
+            this.dgvNCC.Name = "dgvNCC";
+            this.dgvNCC.Size = new System.Drawing.Size(880, 248);
+            this.dgvNCC.TabIndex = 3;
+            this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             // 
             // UC_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvNCC);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "UC_NhaCungCap";
             this.Size = new System.Drawing.Size(886, 410);
+            this.Load += new System.EventHandler(this.UC_NhaCungCap_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +222,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNCC;
     }
 }

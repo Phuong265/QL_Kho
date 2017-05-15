@@ -66,5 +66,22 @@ namespace DTO
                 sdt = value;
             }
         }
+        public DataTable get_khachhang()
+        {
+            return DATA.get_khachhang();
+        }
+        public int them()
+        {
+            return DATA.them_khachhang(ma, ten, sdt, diachi);
+        }
+        public int sua()
+        {
+            return DATA.sua_khachhang(ma, ten, sdt, diachi);
+        }
+        public int xoa(string ma)
+        {
+            return DATA.xoa_khachhang(ma);
+        }
+
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbGioitinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -47,19 +47,21 @@
             this.tsbSua = new System.Windows.Forms.ToolStripButton();
             this.tsbXoa = new System.Windows.Forms.ToolStripButton();
             this.tsbLuu = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvNhanVien
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 176);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(880, 217);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.Location = new System.Drawing.Point(5, 176);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.Size = new System.Drawing.Size(880, 217);
+            this.dgvNhanVien.TabIndex = 8;
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
             // 
             // panel1
             // 
@@ -79,10 +81,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(880, 142);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cmbGioitinh
             // 
             this.cmbGioitinh.FormattingEnabled = true;
+            this.cmbGioitinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cmbGioitinh.Location = new System.Drawing.Point(195, 99);
             this.cmbGioitinh.Name = "cmbGioitinh";
             this.cmbGioitinh.Size = new System.Drawing.Size(188, 21);
@@ -197,6 +203,7 @@
             this.tsbThem.Name = "tsbThem";
             this.tsbThem.Size = new System.Drawing.Size(58, 22);
             this.tsbThem.Text = "Thêm";
+            this.tsbThem.Click += new System.EventHandler(this.tsbThem_Click);
             // 
             // tsbSua
             // 
@@ -205,6 +212,7 @@
             this.tsbSua.Name = "tsbSua";
             this.tsbSua.Size = new System.Drawing.Size(52, 22);
             this.tsbSua.Text = "Sửa  ";
+            this.tsbSua.Click += new System.EventHandler(this.tsbSua_Click);
             // 
             // tsbXoa
             // 
@@ -213,6 +221,7 @@
             this.tsbXoa.Name = "tsbXoa";
             this.tsbXoa.Size = new System.Drawing.Size(50, 22);
             this.tsbXoa.Text = "Xóa ";
+            this.tsbXoa.Click += new System.EventHandler(this.tsbXoa_Click);
             // 
             // tsbLuu
             // 
@@ -221,17 +230,19 @@
             this.tsbLuu.Name = "tsbLuu";
             this.tsbLuu.Size = new System.Drawing.Size(53, 22);
             this.tsbLuu.Text = "Lưu  ";
+            this.tsbLuu.Click += new System.EventHandler(this.tsbLuu_Click);
             // 
             // UC_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "UC_NhanVien";
             this.Size = new System.Drawing.Size(888, 396);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UC_NhanVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -243,7 +254,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbGioitinh;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;

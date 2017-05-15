@@ -61,6 +61,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuaHH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuaHH.Designer.cs">
+      <DependentUpon>SuaHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemMoiHH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThemMoiHH.Designer.cs">
+      <DependentUpon>ThemMoiHH.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_BaoCao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,12 +84,6 @@
     </Compile>
     <Compile Include="UC_DSHangHoa.Designer.cs">
       <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_KhachHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_KhachHang.Designer.cs">
-      <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_NhaCungCap.cs">
       <SubType>UserControl</SubType>
@@ -116,14 +122,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SuaHH.resx">
+      <DependentUpon>SuaHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemMoiHH.resx">
+      <DependentUpon>ThemMoiHH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_BaoCao.resx">
       <DependentUpon>UC_BaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DSHangHoa.resx">
       <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_KhachHang.resx">
-      <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhaCungCap.resx">
       <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
