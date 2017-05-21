@@ -171,7 +171,7 @@ namespace DAL
         {
             return DBConnect.GetData("get_nhanvien");
         }
-        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh,bool gioitinh, string diachi, int? sdt)
+        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh, bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -184,7 +184,7 @@ namespace DAL
             };
             return DBConnect.ExecuteNonQuery("them_nhanvien", para);
         }
-        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh,bool gioitinh, string diachi, int? sdt)
+        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh, bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -209,11 +209,16 @@ namespace DAL
         #endregion
 
         #region HangHoa
-        //public static DataTable get_hanghoa()
-        //{
-        //    return DBConnect.GetData("get_hanghoa");
-        //}
-        public static int them_hanghoa(string ma, string ten, string nhacungcapma,int soluong, string xuatxu, string ghichu)
+        public static DataTable get_hanghoa()
+        {
+            return DBConnect.GetData("get_hanghoa");
+        }
+        // tim kiem
+        public static DataTable get_hanghoa_theoten(string ten)
+        {
+            return DBConnect.GetData("get_hanghoa_theoten N'" + ten + "'");
+        }
+        public static int them_hanghoa(string ma, string ten, string nhacungcapma, int soluong, string xuatxu, string ghichu)
         {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -226,7 +231,7 @@ namespace DAL
             };
             return DBConnect.ExecuteNonQuery("them_hanghoa", para);
         }
-        public static int sua_hanghoa(string ma, string ten, string nhacungcapma,int soluong, string xuatxu, string ghichu)
+        public static int sua_hanghoa(string ma, string ten, string nhacungcapma, int soluong, string xuatxu, string ghichu)
         {
             SqlParameter[] para = new SqlParameter[]
             {

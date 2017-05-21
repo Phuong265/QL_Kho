@@ -61,12 +61,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuaHH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SuaHH.Designer.cs">
-      <DependentUpon>SuaHH.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThemMoiHH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,9 +116,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SuaHH.resx">
-      <DependentUpon>SuaHH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThemMoiHH.resx">
       <DependentUpon>ThemMoiHH.cs</DependentUpon>
     </EmbeddedResource>
