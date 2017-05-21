@@ -30,71 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbThem = new System.Windows.Forms.ToolStripButton();
-            this.tsbSua = new System.Windows.Forms.ToolStripButton();
-            this.tsbXoa = new System.Windows.Forms.ToolStripButton();
-            this.tsbLuu = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 59);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(872, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(880, 342);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbThem,
-            this.tsbSua,
-            this.tsbXoa,
-            this.tsbLuu});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(886, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbThem
-            // 
-            this.tsbThem.Image = global::GUI.Properties.Resources.add;
-            this.tsbThem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbThem.Name = "tsbThem";
-            this.tsbThem.Size = new System.Drawing.Size(58, 22);
-            this.tsbThem.Text = "Thêm";
-            // 
-            // tsbSua
-            // 
-            this.tsbSua.Image = global::GUI.Properties.Resources.but;
-            this.tsbSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSua.Name = "tsbSua";
-            this.tsbSua.Size = new System.Drawing.Size(52, 22);
-            this.tsbSua.Text = "Sửa  ";
-            // 
-            // tsbXoa
-            // 
-            this.tsbXoa.Image = global::GUI.Properties.Resources.delete;
-            this.tsbXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbXoa.Name = "tsbXoa";
-            this.tsbXoa.Size = new System.Drawing.Size(50, 22);
-            this.tsbXoa.Text = "Xóa ";
-            // 
-            // tsbLuu
-            // 
-            this.tsbLuu.Image = global::GUI.Properties.Resources.save;
-            this.tsbLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLuu.Name = "tsbLuu";
-            this.tsbLuu.Size = new System.Drawing.Size(53, 22);
-            this.tsbLuu.Text = "Lưu  ";
             // 
             // contextMenuStrip1
             // 
@@ -104,47 +56,62 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(791, 8);
+            this.label7.Location = new System.Drawing.Point(532, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Ghi Chú";
+            this.label7.Text = "Tìm Kiếm";
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(569, 5);
+            this.txtTK.Location = new System.Drawing.Point(588, 16);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(200, 20);
             this.txtTK.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtTK);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 53);
+            this.panel1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Danh Sách Hàng Hóa";
             // 
             // UC_DSHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTK);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UC_DSHangHoa";
             this.Size = new System.Drawing.Size(886, 413);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbThem;
-        private System.Windows.Forms.ToolStripButton tsbSua;
-        private System.Windows.Forms.ToolStripButton tsbXoa;
-        private System.Windows.Forms.ToolStripButton tsbLuu;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTK;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

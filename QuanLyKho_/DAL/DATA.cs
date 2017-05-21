@@ -171,25 +171,27 @@ namespace DAL
         {
             return DBConnect.GetData("get_nhanvien");
         }
-        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh, int? sdt, string diachi)
+        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh,bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
                 new SqlParameter("@ngaysinh",(ngaysinh != null)?(object)ngaysinh:DBNull.Value),
+                new SqlParameter("@gioitinh",gioitinh),
                 new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };
             return DBConnect.ExecuteNonQuery("them_nhanvien", para);
         }
-        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh, int? sdt, string diachi)
+        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh,bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
                 new SqlParameter("@ngaysinh",(ngaysinh != null)?(object)ngaysinh:DBNull.Value),
+                new SqlParameter("@gioitinh",gioitinh),
                 new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };

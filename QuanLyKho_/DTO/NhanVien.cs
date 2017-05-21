@@ -101,11 +101,11 @@ namespace DTO
 
         public int Them()
         {
-            return DATA.them_nhanvien(ma, ten, ngaysinh, sdt, diachi);
+            return DATA.them_nhanvien(ma, ten, ngaysinh,gioitinh, diachi, sdt);
         }
         public int Sua()
         {
-            return DATA.sua_nhanvien(ma, ten, ngaysinh, sdt, diachi);
+            return DATA.sua_nhanvien(ma, ten, ngaysinh,gioitinh, diachi, sdt);
         }
         public int Xoa(string ma)
         {
