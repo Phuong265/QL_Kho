@@ -19,7 +19,8 @@ namespace GUI
         private Point dragCursor, dragForm;
         public frmMain()
         {
-            DTO.Connect.SetConnectString(Application.StartupPath.Replace(@"bin\Debug", @"data\QuanLyKho.mdf"));
+            string a = Application.StartupPath.Replace(@"bin\Debug", @"data\QuanLyKho.mdf");
+            DTO.Connect.SetConnectString(a);
             while (!DTO.Connect.Open() && MessageBox.Show("Can not connect database", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry) ;
             MessageBox.Show(DTO.Connect.GetSqlConnection().State.ToString());
             InitializeComponent();

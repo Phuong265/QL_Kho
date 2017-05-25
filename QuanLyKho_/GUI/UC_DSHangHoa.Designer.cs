@@ -33,10 +33,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDSHangHoa = new System.Windows.Forms.DataGridView();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHangHoa)).BeginInit();
@@ -77,6 +77,19 @@
             this.panel1.Size = new System.Drawing.Size(886, 53);
             this.panel1.TabIndex = 16;
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Location = new System.Drawing.Point(794, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(39, 39);
+            this.btnTimKiem.TabIndex = 16;
+            this.btnTimKiem.Text = "⚲";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,19 +123,6 @@
             this.dgvDSHangHoa.Name = "dgvDSHangHoa";
             this.dgvDSHangHoa.Size = new System.Drawing.Size(880, 351);
             this.dgvDSHangHoa.TabIndex = 0;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(794, 3);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(39, 39);
-            this.btnTimKiem.TabIndex = 16;
-            this.btnTimKiem.Text = "⚲";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // UC_DSHangHoa
             // 
