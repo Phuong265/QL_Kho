@@ -95,10 +95,15 @@ namespace DTO
             }
         }
 
-        //public static DataTable Get_HH()
-        //{
-        //    return DATA.get_hanghoa();
-        //}
+        public static DataTable Get_HH()
+        {
+            return DATA.get_hanghoa();
+        }
+
+        public static DataTable Get_HH_TheoTen(string ten)
+        {
+            return DATA.get_hanghoa_theoten(ten);
+        }
         public int Them()
         {
             return DATA.them_hanghoa(ma, ten, nhacungcapma,soluong, xuatxu, ghichu);

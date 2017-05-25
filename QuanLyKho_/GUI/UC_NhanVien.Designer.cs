@@ -54,10 +54,13 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(5, 176);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersWidth = 60;
+            this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(880, 217);
             this.dgvNhanVien.TabIndex = 8;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);

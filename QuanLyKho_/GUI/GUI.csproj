@@ -67,9 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuaHH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="SuaHH.cs" />
     <Compile Include="SuaHH.Designer.cs">
       <DependentUpon>SuaHH.cs</DependentUpon>
     </Compile>

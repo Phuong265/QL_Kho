@@ -104,14 +104,13 @@ namespace GUI
                 try
                 {
                     int a;
-                    //decimal b;
                     nv.Ma = txtMa.Text;
                     nv.Ten = txtTen.Text;
                     nv.Diachi = txtDiachi.Text;
                     int.TryParse(txtSDT.Text, out a);
                     nv.Sdt = a;
                     nv.Ngaysinh = Convert.ToDateTime(dtpNgaySinh.Text);
-                    if(cmbGioitinh.Text=="Nam")
+                    if(cmbGioitinh.Text=="Nữ")
                     {
                         nv.Gioitinh = true;
                     }
@@ -119,11 +118,6 @@ namespace GUI
                     {
                         nv.Gioitinh = false;
                     }
-                    //int.TryParse(txtSoLuong.Text, out a);
-                    //dv.Soluong = a;
-                    //decimal.TryParse(txtGia.Text, out b);
-                    //dv.Donvitinh = txtDonViTinh.Text;
-                    //dv.Gia = b;
                     nv.Them();
                     MessageBox.Show("Đã thêm thành công!");
                 }
@@ -138,7 +132,6 @@ namespace GUI
                 try
                 {
                     int a;
-                    //decimal b;
                     nv.Ma = txtMa.Text;
                     nv.Ten = txtTen.Text;
                     nv.Diachi = txtDiachi.Text;
@@ -179,19 +172,19 @@ namespace GUI
             try
             {
                 int Row_Index = e.RowIndex;
-                txtMa.Text = dgvNhanVien.Rows[Row_Index].Cells[1].Value.ToString();
-                txtTen.Text = dgvNhanVien.Rows[Row_Index].Cells[2].Value.ToString();
+                txtMa.Text = dgvNhanVien.Rows[Row_Index].Cells[0].Value.ToString();
+                txtTen.Text = dgvNhanVien.Rows[Row_Index].Cells[1].Value.ToString();
                 cmbGioitinh.SelectedValue = dgvNhanVien.Rows[Row_Index].Cells[3].Value.ToString();
-                dtpNgaySinh.Text = dgvNhanVien.Rows[Row_Index].Cells[4].Value.ToString();
-                txtDiachi.Text = dgvNhanVien.Rows[Row_Index].Cells[5].Value.ToString();
-                txtSDT.Text = dgvNhanVien.Rows[Row_Index].Cells[6].Value.ToString();
+                dtpNgaySinh.Text = dgvNhanVien.Rows[Row_Index].Cells[2].Value.ToString();
+                txtDiachi.Text = dgvNhanVien.Rows[Row_Index].Cells[4].Value.ToString();
+                txtSDT.Text = dgvNhanVien.Rows[Row_Index].Cells[5].Value.ToString();
 
                 //txtNCC.Text = dgvNhapKho.Rows[Row_Index].Cells[7].Value.ToString();
                 //txtGhiChu.Text = dgvNhapKho.Rows[Row_Index].Cells[8].Value.ToString();
-                for (int i = 0; i < dgvNhanVien.Rows.Count; i++)
-                {
-                    dgvNhanVien.Rows[i].Cells[0].Value = (i + 1).ToString();
-                }
+                //for (int i = 0; i < dgvNhanVien.Rows.Count; i++)
+                //{
+                //    dgvNhanVien.Rows[i].Cells[0].Value = (i + 1).ToString();
+                //}
 
             }
             catch { }

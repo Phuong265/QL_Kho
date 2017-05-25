@@ -138,7 +138,7 @@ namespace DAL
                  new SqlParameter("@dvt",(donvitinh!=null && donvitinh.Trim()!="")?(object)donvitinh:DBNull.Value),
                   new SqlParameter("@gn",(gianhap >0)?(object)gianhap:DBNull.Value),
                    new SqlParameter("@tt",(thanhtien >0)?(object)thanhtien:DBNull.Value)
-            };
+           };
             return DBConnect.ExecuteNonQuery("them_chitietphieunhap", para);
         }
         //public static int sua_chitietphieunhap(string pnma, string hhma, int sl, string dvt, decimal gianhap, decimal thanhtien)
@@ -171,25 +171,27 @@ namespace DAL
         {
             return DBConnect.GetData("get_nhanvien");
         }
-        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh, int? sdt, string diachi)
+        public static int them_nhanvien(string ma, string ten, DateTime? ngaysinh, bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
                 new SqlParameter("@ngaysinh",(ngaysinh != null)?(object)ngaysinh:DBNull.Value),
+                new SqlParameter("@gioitinh",gioitinh),
                 new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };
             return DBConnect.ExecuteNonQuery("them_nhanvien", para);
         }
-        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh, int? sdt, string diachi)
+        public static int sua_nhanvien(string ma, string ten, DateTime? ngaysinh, bool gioitinh, string diachi, int? sdt)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
                 new SqlParameter("@ngaysinh",(ngaysinh != null)?(object)ngaysinh:DBNull.Value),
+                new SqlParameter("@gioitinh",gioitinh),
                 new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };
@@ -207,11 +209,16 @@ namespace DAL
         #endregion
 
         #region HangHoa
-        //public static DataTable get_hanghoa()
-        //{
-        //    return DBConnect.GetData("get_hanghoa");
-        //}
-        public static int them_hanghoa(string ma, string ten, string nhacungcapma,int soluong, string xuatxu, string ghichu)
+        public static DataTable get_hanghoa()
+        {
+            return DBConnect.GetData("get_hanghoa");
+        }
+        // tim kiem
+        public static DataTable get_hanghoa_theoten(string ten)
+        {
+            return DBConnect.GetData("get_hanghoa_theoten N'" + ten + "'");
+        }
+        public static int them_hanghoa(string ma, string ten, string nhacungcapma, int soluong, string xuatxu, string ghichu)
         {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -224,7 +231,7 @@ namespace DAL
             };
             return DBConnect.ExecuteNonQuery("them_hanghoa", para);
         }
-        public static int sua_hanghoa(string ma, string ten, string nhacungcapma,int soluong, string xuatxu, string ghichu)
+        public static int sua_hanghoa(string ma, string ten, string nhacungcapma, int soluong, string xuatxu, string ghichu)
         {
             SqlParameter[] para = new SqlParameter[]
             {
