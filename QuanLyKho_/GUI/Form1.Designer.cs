@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.pnND = new System.Windows.Forms.Panel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +44,7 @@
             this.danhSáchHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.xNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnND = new System.Windows.Forms.Panel();
             this.pnTieuDe.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -59,6 +59,9 @@
             this.pnTieuDe.Name = "pnTieuDe";
             this.pnTieuDe.Size = new System.Drawing.Size(881, 49);
             this.pnTieuDe.TabIndex = 0;
+            this.pnTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseDown);
+            this.pnTieuDe.MouseMove += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseMove);
+            this.pnTieuDe.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseup);
             // 
             // linkLabel1
             // 
@@ -107,14 +110,9 @@
             this.toolStrip1.Size = new System.Drawing.Size(881, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // pnND
-            // 
-            this.pnND.BackColor = System.Drawing.Color.White;
-            this.pnND.Location = new System.Drawing.Point(3, 82);
-            this.pnND.Name = "pnND";
-            this.pnND.Size = new System.Drawing.Size(881, 408);
-            this.pnND.TabIndex = 2;
+            this.toolStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseDown);
+            this.toolStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseMove);
+            this.toolStrip1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseup);
             // 
             // toolStripDropDownButton1
             // 
@@ -209,6 +207,14 @@
             this.xNTToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.xNTToolStripMenuItem.Text = "X-N-T";
             // 
+            // pnND
+            // 
+            this.pnND.BackColor = System.Drawing.Color.White;
+            this.pnND.Location = new System.Drawing.Point(3, 82);
+            this.pnND.Name = "pnND";
+            this.pnND.Size = new System.Drawing.Size(881, 408);
+            this.pnND.TabIndex = 2;
+            // 
             // frmMain
             // 
             this.AllowDrop = true;
@@ -227,6 +233,9 @@
             this.Name = "frmMain";
             this.Text = "QUẢN LÝ KHO";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseup);
             this.pnTieuDe.ResumeLayout(false);
             this.pnTieuDe.PerformLayout();
             this.pnMenu.ResumeLayout(false);

@@ -34,10 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DAL">
-      <HintPath>..\DTO\bin\Debug\DAL.dll</HintPath>
-    </Reference>
-    <Reference Include="DTO">
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -167,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{f3912602-d553-49bd-a9fb-a9e59ded9fae}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

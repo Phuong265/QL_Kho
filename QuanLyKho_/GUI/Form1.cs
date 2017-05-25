@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DTO;
+using System.Drawing;
 
 namespace GUI
 {
     public partial class frmMain : Form
     {
+        private bool drag = false;
+        private Point dragCursor, dragForm;
         public frmMain()
         {
             DTO.Connect.SetConnectString(Application.StartupPath.Replace(@"bin\Debug", @"data\QuanLyKho.mdf"));
@@ -21,7 +24,34 @@ namespace GUI
             MessageBox.Show(DTO.Connect.GetSqlConnection().State.ToString());
             InitializeComponent();
         }
+        private void changenk_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            dragCursor = Cursor.Position;
+            dragForm = this.Location;
+        }
 
+        private void mouseup(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+        private void changenk_MouseMove(object sender, MouseEventArgs e)
+        {
+            int wid = SystemInformation.VirtualScreen.Width;
+            int hei = SystemInformation.VirtualScreen.Height;
+            if (drag)
+            {
+                // Phải using System.Drawing;
+                Point change = Point.Subtract(Cursor.Position, new Size(dragCursor));
+                Point newpos = Point.Add(dragForm, new Size(change));
+                // QUyết định có cho form chui ra ngoài màn hình không
+                if (newpos.X < 0) newpos.X = 0;
+                if (newpos.Y < 0) newpos.Y = 0;
+                if (newpos.X + this.Width > wid) newpos.X = wid - this.Width;
+                if (newpos.Y + this.Height > hei) newpos.Y = hei - this.Height;
+                this.Location = newpos;
+            }
+        }
         public void showControl(System.Windows.Forms.Control obj)
         {
             pnND.Controls.Clear();
