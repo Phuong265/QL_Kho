@@ -86,18 +86,18 @@ namespace DAL
         #endregion
 
         #region  phieu nhap
-        //public static DataTable get_khachhang()
-        //{
-        //    return DBConnect.GetData("get_khachhang");
-        //}
+        public static DataTable get_phieunhap()
+        {
+            return DBConnect.GetData("get_phieunhap");
+        }
         public static int them_phieunhap(string ma, string nvma, DateTime ngaynhap, decimal tongtien)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
-                new SqlParameter("@nhanvienma",(nvma!=null && nvma.Trim()!="")?(object)nvma:DBNull.Value),
-                new SqlParameter("@ngaynhap",ngaynhap),
-                new SqlParameter("@tongtien",(tongtien >0)?(object)tongtien:DBNull.Value)
+                new SqlParameter("@nvma",(nvma!=null && nvma.Trim()!="")?(object)nvma:DBNull.Value),
+                new SqlParameter("@day",ngaynhap),
+                new SqlParameter("@money",(tongtien >0)?(object)tongtien:DBNull.Value)
             };
             return DBConnect.ExecuteNonQuery("them_phieunhap", para);
         }
@@ -124,45 +124,45 @@ namespace DAL
         #endregion
 
         #region  Chi Tiet Phieu Nhap
-        //public static DataTable get_chitietphieunhap()
-        //{
-        //    return DBConnect.GetData("get_chitietphieunhap");
-        //}
-        public static int them_chitietphieunhap(string pnma, string hhma, int sl, string dvt, decimal gianhap, decimal thanhtien)
+        public static DataTable get_chitietphieunhap()
+        {
+            return DBConnect.GetData("get_chitietphieunhap");
+        }
+        public static int them_chitietphieunhap(string phieunhapma, string hanghoama, int soluong, string donvitinh, decimal gianhap, decimal thanhtien)
         {
             SqlParameter[] para = new SqlParameter[]
             {
-                new SqlParameter("@phieunhapma",pnma),
-                new SqlParameter("@hanghoama",hhma),
-                new SqlParameter("@soluong",(sl >0)?(object)sl:DBNull.Value),
-                new SqlParameter("@donvitinh",dvt),
-                new SqlParameter("@gianhap",(gianhap >0)?(object)gianhap:DBNull.Value),
-                new SqlParameter("@thanhtien",(thanhtien >0)?(object)thanhtien:DBNull.Value)
-            };
+                new SqlParameter("@mapn",phieunhapma),
+                new SqlParameter("@mahh",hanghoama),
+                new SqlParameter("@sl",(soluong >0)?(object)soluong:DBNull.Value),
+                 new SqlParameter("@dvt",(donvitinh!=null && donvitinh.Trim()!="")?(object)donvitinh:DBNull.Value),
+                  new SqlParameter("@gn",(gianhap >0)?(object)gianhap:DBNull.Value),
+                   new SqlParameter("@tt",(thanhtien >0)?(object)thanhtien:DBNull.Value)
+           };
             return DBConnect.ExecuteNonQuery("them_chitietphieunhap", para);
         }
-        public static int sua_chitietphieunhap(string pnma, string hhma, int sl, string dvt, decimal gianhap, decimal thanhtien)
-        {
-            SqlParameter[] para = new SqlParameter[]
-            {
-                new SqlParameter("@phieunhapma",pnma),
-                new SqlParameter("@hanghoama",hhma),
-                new SqlParameter("@soluong",(sl >0)?(object)sl:DBNull.Value),
-                new SqlParameter("@donvitinh",dvt),
-                new SqlParameter("@gianhap",(gianhap >0)?(object)gianhap:DBNull.Value),
-                new SqlParameter("@thanhtien",(thanhtien >0)?(object)thanhtien:DBNull.Value)
-            };
-            return DBConnect.ExecuteNonQuery("sua_chitietphieunhap", para);
-        }
-        public static int xoa_chitietphieunhap(string pnma, string hhma)
-        {
-            SqlParameter[] para = new SqlParameter[]
-           {
-                 new SqlParameter("@phieunhapma",pnma),
-                 new SqlParameter("@hanghoama",hhma)
-           };
-            return DBConnect.ExecuteNonQuery("xoa_chitietphieunhap", para);
-        }
+        //public static int sua_chitietphieunhap(string pnma, string hhma, int sl, string dvt, decimal gianhap, decimal thanhtien)
+        //{
+        //    SqlParameter[] para = new SqlParameter[]
+        //    {
+        //        new SqlParameter("@phieunhapma",pnma),
+        //        new SqlParameter("@hanghoama",hhma),
+        //        new SqlParameter("@soluong",(sl >0)?(object)sl:DBNull.Value),
+        //        new SqlParameter("@donvitinh",dvt),
+        //        new SqlParameter("@gianhap",(gianhap >0)?(object)gianhap:DBNull.Value),
+        //        new SqlParameter("@thanhtien",(thanhtien >0)?(object)thanhtien:DBNull.Value)
+        //    };
+        //    return DBConnect.ExecuteNonQuery("sua_chitietphieunhap", para);
+        //}
+        //public static int xoa_chitietphieunhap(string pnma, string hhma)
+        //{
+        //    SqlParameter[] para = new SqlParameter[]
+        //   {
+        //         new SqlParameter("@phieunhapma",pnma),
+        //         new SqlParameter("@hanghoama",hhma)
+        //   };
+        //    return DBConnect.ExecuteNonQuery("xoa_chitietphieunhap", para);
+        //}
 
         #endregion
 

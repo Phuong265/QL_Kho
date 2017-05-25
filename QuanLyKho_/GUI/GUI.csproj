@@ -56,6 +56,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>frmChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachPhieuNhap.Designer.cs">
+      <DependentUpon>frmDanhSachPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemMoiHH.cs">
@@ -102,6 +114,12 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietPhieuNhap.resx">
+      <DependentUpon>frmChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachPhieuNhap.resx">
+      <DependentUpon>frmDanhSachPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,6 +184,10 @@
     <None Include="Resources\print.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{face18f4-fa5a-4473-8360-e743d2f299c4}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f3912602-d553-49bd-a9fb-a9e59ded9fae}</Project>
       <Name>DTO</Name>
