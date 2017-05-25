@@ -44,7 +44,7 @@
             this.btnXem.Location = new System.Drawing.Point(482, 39);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(75, 23);
-            this.btnXem.TabIndex = 25;
+            this.btnXem.TabIndex = 29;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = false;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
@@ -56,9 +56,8 @@
             this.label1.Location = new System.Drawing.Point(191, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 24);
-            this.label1.TabIndex = 24;
+            this.label1.TabIndex = 28;
             this.label1.Text = "Chi tiết phiếu nhập";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cboMaPhieu
             // 
@@ -66,8 +65,7 @@
             this.cboMaPhieu.Location = new System.Drawing.Point(208, 41);
             this.cboMaPhieu.Name = "cboMaPhieu";
             this.cboMaPhieu.Size = new System.Drawing.Size(230, 21);
-            this.cboMaPhieu.TabIndex = 23;
-            this.cboMaPhieu.SelectedIndexChanged += new System.EventHandler(this.cboMaPhieu_SelectedIndexChanged);
+            this.cboMaPhieu.TabIndex = 27;
             // 
             // dgvChiTietPhieuNhap
             // 
@@ -80,8 +78,7 @@
             this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";
             this.dgvChiTietPhieuNhap.ReadOnly = true;
             this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(576, 193);
-            this.dgvChiTietPhieuNhap.TabIndex = 22;
-            this.dgvChiTietPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietPhieuNhap_CellContentClick);
+            this.dgvChiTietPhieuNhap.TabIndex = 26;
             // 
             // frmChiTietPhieuNhap
             // 
