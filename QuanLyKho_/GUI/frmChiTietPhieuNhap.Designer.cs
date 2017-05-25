@@ -58,6 +58,7 @@
             this.label1.Size = new System.Drawing.Size(186, 24);
             this.label1.TabIndex = 24;
             this.label1.Text = "Chi tiết phiếu nhập";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cboMaPhieu
             // 
@@ -66,6 +67,7 @@
             this.cboMaPhieu.Name = "cboMaPhieu";
             this.cboMaPhieu.Size = new System.Drawing.Size(230, 21);
             this.cboMaPhieu.TabIndex = 23;
+            this.cboMaPhieu.SelectedIndexChanged += new System.EventHandler(this.cboMaPhieu_SelectedIndexChanged);
             // 
             // dgvChiTietPhieuNhap
             // 
@@ -79,6 +81,7 @@
             this.dgvChiTietPhieuNhap.ReadOnly = true;
             this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(576, 193);
             this.dgvChiTietPhieuNhap.TabIndex = 22;
+            this.dgvChiTietPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietPhieuNhap_CellContentClick);
             // 
             // frmChiTietPhieuNhap
             // 
