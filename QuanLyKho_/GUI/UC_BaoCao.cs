@@ -77,6 +77,14 @@ namespace GUI
             cbb_nam.ValueMember = "nam";
             cbb_nam.DisplayMember = "nam";
             rdb_day.Checked = true;
+            if(cbb_nam.Text!="")
+            {
+                time = BaoCao.get_ngay(cbb_nam.Text, cbb_time.Text);
+                dgv_time.DataSource = time;
+                dgv_time.Columns[0].HeaderText = "Ngày";
+                dgv_time.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
         }
 
         private void lbl_ctban_Click(object sender, EventArgs e)
@@ -121,35 +129,39 @@ namespace GUI
         {
             DataTable dt = new DataTable();
             DataTable dts = new DataTable();
-            time = BaoCao.get_ngay(cbb_nam.Text, cbb_time.Text);
-            if (rdb_day.Checked == true)
+           
+            if (rdb_day.Checked == true )
             {
-                dt = BaoCao.get_soluongnhapngay(cbb_nam.Text, cbb_time.Text);
-                dts = BaoCao.get_soluongxuatngay(cbb_nam.Text, cbb_time.Text);
-                if(dts!=null)
-                    for (int i = 0; i < dts.Columns.Count; i++)
-                { DataColumn newcolumn = new DataColumn(dts.Columns[i].ColumnName, dts.Columns[i].DataType); dt.Columns.Add(newcolumn); }
-                if (dt != null)
+                if(dgv_time.CurrentRow != null)
                 {
-                    dgv_time.DataSource = time;
-                    dgv_time.Columns[0].HeaderText = "Ngày";
-                    dgv_time.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
-                else
-                {
-                    MessageBox.Show("Không có dữ liệu cho tháng " + cbb_time.Text);
-                    return;
+                    dt = BaoCao.get_soluongnhapngay(cbb_nam.Text, cbb_time.Text);
+                    dts = BaoCao.get_soluongxuatngay(cbb_nam.Text, cbb_time.Text);
+                    if (dts != null)
+                        for (int i = 0; i < dts.Columns.Count; i++)
+                        { DataColumn newcolumn = new DataColumn(dts.Columns[i].ColumnName, dts.Columns[i].DataType); dt.Columns.Add(newcolumn); }
+                    if (dt != null)
+                    {
+                        dgv_time.DataSource = time;
+                        dgv_time.Columns[0].HeaderText = "Ngày";
+                        dgv_time.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có dữ liệu cho tháng " + cbb_time.Text);
+                        return;
+                    }
+               
                 }
                    
             }
-            else
+            else 
             {
                 dt = BaoCao.get_soluongnhapthang(cbb_nam.Text, cbb_time.Text);
                 dts = BaoCao.get_soluongxuatthang(cbb_nam.Text, cbb_time.Text);
             }
-            if(dts!=null)
+            if(dts!=null&&dts.Columns.Count>0)
             txt_ban.Text = dts.Rows[0][0].ToString();
-            if(dt!=null)
+            if(dt != null && dt.Columns.Count > 0)
             txt_nhap.Text = dt.Rows[0][0].ToString();
 
             displaychart();
@@ -216,6 +228,17 @@ namespace GUI
                 }
             }
 
+        }
+
+        private void cbb_time_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(rdb_day.Checked==true)
+            {
+                time = BaoCao.get_ngay(cbb_nam.Text, cbb_time.Text);
+                dgv_time.DataSource = time;
+                dgv_time.Columns[0].HeaderText = "Ngày";
+                dgv_time.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
     }
 }

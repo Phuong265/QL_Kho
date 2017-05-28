@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbb_nam = new System.Windows.Forms.ComboBox();
@@ -125,6 +125,7 @@
             this.cbb_time.Sorted = true;
             this.cbb_time.TabIndex = 32;
             this.cbb_time.Tag = "";
+            this.cbb_time.SelectedIndexChanged += new System.EventHandler(this.cbb_time_SelectedIndexChanged);
             // 
             // lbl_ctnhap
             // 
@@ -210,30 +211,33 @@
             // 
             // dgv_time
             // 
+            this.dgv_time.AllowUserToAddRows = false;
+            this.dgv_time.AllowUserToDeleteRows = false;
             this.dgv_time.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_time.Location = new System.Drawing.Point(573, 156);
             this.dgv_time.Name = "dgv_time";
+            this.dgv_time.ReadOnly = true;
             this.dgv_time.Size = new System.Drawing.Size(313, 257);
             this.dgv_time.TabIndex = 1;
             // 
             // C_bieudo
             // 
             this.C_bieudo.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Cross;
-            chartArea1.Name = "ChartArea1";
-            this.C_bieudo.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.C_bieudo.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.C_bieudo.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.C_bieudo.Legends.Add(legend2);
             this.C_bieudo.Location = new System.Drawing.Point(0, 0);
             this.C_bieudo.Name = "C_bieudo";
             this.C_bieudo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series3";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.C_bieudo.Series.Add(series1);
-            this.C_bieudo.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series3";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series2";
+            this.C_bieudo.Series.Add(series3);
+            this.C_bieudo.Series.Add(series4);
             this.C_bieudo.Size = new System.Drawing.Size(567, 410);
             this.C_bieudo.TabIndex = 0;
             this.C_bieudo.Text = "chart1";
