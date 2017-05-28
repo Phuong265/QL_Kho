@@ -132,7 +132,7 @@
             // 
             this.nhậpKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.nhậpKhoToolStripMenuItem.Name = "nhậpKhoToolStripMenuItem";
-            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nhậpKhoToolStripMenuItem.Text = "Nhập Kho";
             this.nhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhoToolStripMenuItem_Click);
             // 
@@ -140,7 +140,7 @@
             // 
             this.xuấtKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.xuấtKhoToolStripMenuItem.Name = "xuấtKhoToolStripMenuItem";
-            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xuấtKhoToolStripMenuItem.Text = "Xuất Kho";
             this.xuấtKhoToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhoToolStripMenuItem_Click);
             // 
