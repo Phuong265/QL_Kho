@@ -34,7 +34,7 @@ namespace GUI
 
         void MoDieuKhien()
         {
-            txtMaNCC.Enabled = true;
+            txtMaNCC.Enabled = false;
             txtTenNCC.Enabled = true;
             txtDiachi.Enabled = true;
             txtSDT.Enabled = true;
@@ -61,6 +61,17 @@ namespace GUI
         {
             MoDieuKhien();
             SetNull();
+                    txtMaNCC.Text = null;
+                    DataTable dt = ncc.get_nhacungcap();
+                    if (dt != null)
+
+                    {
+                        List<string> list = ((DataTable)dt).AsEnumerable().Select(x => x.Field<string>(dt.Columns[0])).ToList();
+                        if (list.Count > 0) txtMaNCC.Text = string.Format("{0:d4}", int.Parse(list.Max()) + 1);
+                        else txtMaNCC.Text = "0001";
+                    }
+                    else txtMaNCC.Text = "0001";
+
             ThemMoi = true;
         }
 
@@ -145,10 +156,10 @@ namespace GUI
             try
             {
                 int Row_Index = e.RowIndex;
-                txtMaNCC.Text = dgvNCC.Rows[Row_Index].Cells[1].Value.ToString();
-                txtTenNCC.Text = dgvNCC.Rows[Row_Index].Cells[2].Value.ToString();
-                txtDiachi.Text = dgvNCC.Rows[Row_Index].Cells[5].Value.ToString();
-                txtSDT.Text = dgvNCC.Rows[Row_Index].Cells[6].Value.ToString();
+                txtMaNCC.Text = dgvNCC.Rows[Row_Index].Cells[0].Value.ToString();
+                txtTenNCC.Text = dgvNCC.Rows[Row_Index].Cells[1].Value.ToString();
+                txtDiachi.Text = dgvNCC.Rows[Row_Index].Cells[2].Value.ToString();
+                txtSDT.Text = dgvNCC.Rows[Row_Index].Cells[3].Value.ToString();
 
                 //txtNCC.Text = dgvNhapKho.Rows[Row_Index].Cells[7].Value.ToString();
                 //txtGhiChu.Text = dgvNhapKho.Rows[Row_Index].Cells[8].Value.ToString();
