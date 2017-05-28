@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Drawing;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,10 +42,10 @@ namespace GUI
             int hei = SystemInformation.VirtualScreen.Height;
             if (drag)
             {
-                // Phải using System.Drawing;
+            //    Phải using System.Drawing;
                 Point change = Point.Subtract(Cursor.Position, new Size(dragCursor));
                 Point newpos = Point.Add(dragForm, new Size(change));
-                // QUyết định có cho form chui ra ngoài màn hình không
+          //      QUyết định có cho form chui ra ngoài màn hình không
                 if (newpos.X < 0) newpos.X = 0;
                 if (newpos.Y < 0) newpos.Y = 0;
                 if (newpos.X + this.Width > wid) newpos.X = wid - this.Width;
@@ -96,15 +96,15 @@ namespace GUI
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            //if (toolStripDropDownButton1.BackColor == ColorTransparent)
-            //    toolStripDropDownButton1.BackColor = Color.SeaGreen;
-            //else toolStripDropDownButton1.BackColor = Color.Transparent;
+            if (toolStripDropDownButton1.BackColor == Color.Transparent)
+                toolStripDropDownButton1.BackColor = Color.SeaGreen;
+            else toolStripDropDownButton1.BackColor = Color.Transparent;
 
         }
 
         private void nhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             UserControl us = new UC_NhapKho();
             showControl(us);
         }
@@ -118,9 +118,9 @@ namespace GUI
 
         private void toolStripDropDownButton2_Click(object sender, EventArgs e)
         {
-            //if (toolStripDropDownButton2.BackColor == Color.Transparent)
-            //    toolStripDropDownButton2.BackColor = Color.SeaGreen;
-            //else toolStripDropDownButton2.BackColor = Color.Transparent;
+            if (toolStripDropDownButton2.BackColor == Color.Transparent)
+                toolStripDropDownButton2.BackColor = Color.SeaGreen;
+            else toolStripDropDownButton2.BackColor = Color.Transparent;
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace GUI
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,8 +153,8 @@ namespace GUI
 
         private void danhSáchHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //UC_DSHangHoa hh = new UC_DSHangHoa();
-            //hh.Show();
+            UC_DSHangHoa hh = new UC_DSHangHoa();
+            hh.Show();
             UserControl us = new UC_DSHangHoa();
             showControl(us);
         }
