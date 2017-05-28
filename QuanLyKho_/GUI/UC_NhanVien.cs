@@ -36,7 +36,7 @@ namespace GUI
 
         void MoDieuKhien()
         {
-            txtMa.Enabled = true;
+            txtMa.Enabled = false;
             txtTen.Enabled = true;
             txtDiachi.Enabled = true;
             txtSDT.Enabled = true;
@@ -65,6 +65,19 @@ namespace GUI
         {
             MoDieuKhien();
             SetNull();
+        
+            //txtMa.Text = null;
+            //DataTable dt = nv.get_nhanvien();
+            //if (dt != null)
+
+            //{
+            //    List<string> list = ((DataTable)dt).AsEnumerable().Select(x => x.Field<string>(dt.Columns[0])).ToList();
+            //    if (list.Count > 0) txtMa.Text = string.Format("{0:d4}", int.Parse(list.Max()) + 1);
+            //    else
+            //        txtMa.Text = "0001";
+            //}
+            //else
+            //    txtMa.Text = "0001";
             ThemMoi = true;
         }
 
