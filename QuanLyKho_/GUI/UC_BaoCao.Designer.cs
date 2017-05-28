@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rdb_day = new System.Windows.Forms.RadioButton();
-            this.rdb_month = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cbb_nam = new System.Windows.Forms.ComboBox();
+            this.btnXem = new System.Windows.Forms.Button();
+            this.cbb_time = new System.Windows.Forms.ComboBox();
+            this.lbl_ctnhap = new System.Windows.Forms.Label();
+            this.lbl_ctban = new System.Windows.Forms.Label();
+            this.txt_ban = new System.Windows.Forms.TextBox();
+            this.txt_nhap = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rdb_month = new System.Windows.Forms.RadioButton();
+            this.rdb_day = new System.Windows.Forms.RadioButton();
+            this.dgv_time = new System.Windows.Forms.DataGridView();
+            this.C_bieudo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_time)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C_bieudo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,85 +66,103 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Honeydew;
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.cbb_nam);
+            this.panel2.Controls.Add(this.btnXem);
+            this.panel2.Controls.Add(this.cbb_time);
+            this.panel2.Controls.Add(this.lbl_ctnhap);
+            this.panel2.Controls.Add(this.lbl_ctban);
+            this.panel2.Controls.Add(this.txt_ban);
+            this.panel2.Controls.Add(this.txt_nhap);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.rdb_month);
             this.panel2.Controls.Add(this.rdb_day);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.chart1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Controls.Add(this.dgv_time);
+            this.panel2.Controls.Add(this.C_bieudo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 407);
+            this.panel2.Size = new System.Drawing.Size(886, 413);
             this.panel2.TabIndex = 0;
             // 
-            // chart1
+            // cbb_nam
             // 
-            this.chart1.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Cross;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.BorderColor = System.Drawing.Color.Transparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Color = System.Drawing.Color.PaleGreen;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.XValueMember = "1";
-            series3.YValueMembers = "2";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(567, 410);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.cbb_nam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbb_nam.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_nam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_nam.FormattingEnabled = true;
+            this.cbb_nam.Location = new System.Drawing.Point(799, 129);
+            this.cbb_nam.Name = "cbb_nam";
+            this.cbb_nam.Size = new System.Drawing.Size(84, 21);
+            this.cbb_nam.Sorted = true;
+            this.cbb_nam.TabIndex = 34;
+            this.cbb_nam.Tag = "";
+            this.cbb_nam.SelectedIndexChanged += new System.EventHandler(this.cbb_nam_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // btnXem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(573, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(304, 253);
-            this.dataGridView1.TabIndex = 1;
+            this.btnXem.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnXem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnXem.Location = new System.Drawing.Point(609, 127);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(75, 23);
+            this.btnXem.TabIndex = 33;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = false;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // rdb_day
+            // cbb_time
             // 
-            this.rdb_day.AutoSize = true;
-            this.rdb_day.Location = new System.Drawing.Point(609, 13);
-            this.rdb_day.Name = "rdb_day";
-            this.rdb_day.Size = new System.Drawing.Size(50, 17);
-            this.rdb_day.TabIndex = 2;
-            this.rdb_day.TabStop = true;
-            this.rdb_day.Text = "Ngày";
-            this.rdb_day.UseVisualStyleBackColor = true;
+            this.cbb_time.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbb_time.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_time.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_time.FormattingEnabled = true;
+            this.cbb_time.Location = new System.Drawing.Point(709, 129);
+            this.cbb_time.Name = "cbb_time";
+            this.cbb_time.Size = new System.Drawing.Size(84, 21);
+            this.cbb_time.Sorted = true;
+            this.cbb_time.TabIndex = 32;
+            this.cbb_time.Tag = "";
             // 
-            // rdb_month
+            // lbl_ctnhap
             // 
-            this.rdb_month.AutoSize = true;
-            this.rdb_month.Location = new System.Drawing.Point(742, 13);
-            this.rdb_month.Name = "rdb_month";
-            this.rdb_month.Size = new System.Drawing.Size(56, 17);
-            this.rdb_month.TabIndex = 3;
-            this.rdb_month.TabStop = true;
-            this.rdb_month.Text = "Tháng";
-            this.rdb_month.UseVisualStyleBackColor = true;
+            this.lbl_ctnhap.AutoSize = true;
+            this.lbl_ctnhap.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lbl_ctnhap.Location = new System.Drawing.Point(804, 53);
+            this.lbl_ctnhap.Name = "lbl_ctnhap";
+            this.lbl_ctnhap.Size = new System.Drawing.Size(16, 13);
+            this.lbl_ctnhap.TabIndex = 31;
+            this.lbl_ctnhap.Text = "...";
+            this.lbl_ctnhap.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label7
+            // lbl_ctban
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(606, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 16);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Nhập vào :";
+            this.lbl_ctban.AutoSize = true;
+            this.lbl_ctban.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lbl_ctban.Location = new System.Drawing.Point(804, 86);
+            this.lbl_ctban.Name = "lbl_ctban";
+            this.lbl_ctban.Size = new System.Drawing.Size(16, 13);
+            this.lbl_ctban.TabIndex = 30;
+            this.lbl_ctban.Text = "...";
+            this.lbl_ctban.Click += new System.EventHandler(this.lbl_ctban_Click);
+            // 
+            // txt_ban
+            // 
+            this.txt_ban.Enabled = false;
+            this.txt_ban.Location = new System.Drawing.Point(698, 79);
+            this.txt_ban.Name = "txt_ban";
+            this.txt_ban.Size = new System.Drawing.Size(100, 20);
+            this.txt_ban.TabIndex = 18;
+            // 
+            // txt_nhap
+            // 
+            this.txt_nhap.Enabled = false;
+            this.txt_nhap.Location = new System.Drawing.Point(698, 46);
+            this.txt_nhap.Name = "txt_nhap";
+            this.txt_nhap.Size = new System.Drawing.Size(100, 20);
+            this.txt_nhap.TabIndex = 17;
             // 
             // label1
             // 
@@ -154,61 +174,69 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Bán ra :";
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(698, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(606, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Nhập vào :";
             // 
-            // textBox2
+            // rdb_month
             // 
-            this.textBox2.Location = new System.Drawing.Point(698, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 18;
+            this.rdb_month.AutoSize = true;
+            this.rdb_month.Location = new System.Drawing.Point(742, 13);
+            this.rdb_month.Name = "rdb_month";
+            this.rdb_month.Size = new System.Drawing.Size(56, 17);
+            this.rdb_month.TabIndex = 3;
+            this.rdb_month.TabStop = true;
+            this.rdb_month.Text = "Tháng";
+            this.rdb_month.UseVisualStyleBackColor = true;
+            this.rdb_month.CheckedChanged += new System.EventHandler(this.rdb_month_CheckedChanged);
             // 
-            // label2
+            // rdb_day
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label2.Location = new System.Drawing.Point(804, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "...";
+            this.rdb_day.AutoSize = true;
+            this.rdb_day.Location = new System.Drawing.Point(634, 13);
+            this.rdb_day.Name = "rdb_day";
+            this.rdb_day.Size = new System.Drawing.Size(50, 17);
+            this.rdb_day.TabIndex = 2;
+            this.rdb_day.TabStop = true;
+            this.rdb_day.Text = "Ngày";
+            this.rdb_day.UseVisualStyleBackColor = true;
+            this.rdb_day.CheckedChanged += new System.EventHandler(this.rdb_day_CheckedChanged);
             // 
-            // label3
+            // dgv_time
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label3.Location = new System.Drawing.Point(804, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "...";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.dgv_time.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_time.Location = new System.Drawing.Point(573, 156);
+            this.dgv_time.Name = "dgv_time";
+            this.dgv_time.Size = new System.Drawing.Size(313, 257);
+            this.dgv_time.TabIndex = 1;
             // 
-            // comboBox1
+            // C_bieudo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(756, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 32;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnXoa.Location = new System.Drawing.Point(609, 127);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 33;
-            this.btnXoa.Text = "Xem";
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.C_bieudo.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Cross;
+            chartArea1.Name = "ChartArea1";
+            this.C_bieudo.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.C_bieudo.Legends.Add(legend1);
+            this.C_bieudo.Location = new System.Drawing.Point(0, 0);
+            this.C_bieudo.Name = "C_bieudo";
+            this.C_bieudo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series3";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            this.C_bieudo.Series.Add(series1);
+            this.C_bieudo.Series.Add(series2);
+            this.C_bieudo.Size = new System.Drawing.Size(567, 410);
+            this.C_bieudo.TabIndex = 0;
+            this.C_bieudo.Text = "chart1";
             // 
             // UC_BaoCao
             // 
@@ -217,11 +245,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "UC_BaoCao";
             this.Size = new System.Drawing.Size(886, 413);
+            this.Load += new System.EventHandler(this.UC_BaoCao_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_time)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C_bieudo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,17 +259,18 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart C_bieudo;
         private System.Windows.Forms.RadioButton rdb_month;
         private System.Windows.Forms.RadioButton rdb_day;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgv_time;
+        private System.Windows.Forms.TextBox txt_ban;
+        private System.Windows.Forms.TextBox txt_nhap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Label lbl_ctnhap;
+        private System.Windows.Forms.Label lbl_ctban;
+        private System.Windows.Forms.ComboBox cbb_time;
+        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.ComboBox cbb_nam;
     }
 }

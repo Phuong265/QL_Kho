@@ -204,8 +204,9 @@
             // xNTToolStripMenuItem
             // 
             this.xNTToolStripMenuItem.Name = "xNTToolStripMenuItem";
-            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xNTToolStripMenuItem.Text = "X-N-T";
+            this.xNTToolStripMenuItem.Click += new System.EventHandler(this.xNTToolStripMenuItem_Click);
             // 
             // pnND
             // 
