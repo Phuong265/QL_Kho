@@ -48,28 +48,36 @@ namespace DAL
         #endregion
 
         #region  Khach Hang
+        public static DataTable get_makhachhang()
+        {
+            return DBConnect.GetData("select max(ma) from khachhang");
+        }
+        public static DataTable get_khachhang(string makh)
+        {
+            return DBConnect.GetData("select ma, ten, diachi, sdt from khachhang where ma = '" + makh + "'");
+        }
         public static DataTable get_khachhang()
         {
             return DBConnect.GetData("get_khachhang");
         }
-        public static int them_khachhang(string ma, string ten, int sdt, string diachi)
+        public static int them_khachhang(string ma, string ten, string sdt, string diachi)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
-                new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
+                new SqlParameter("@sdt",(sdt != "")?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };
             return DBConnect.ExecuteNonQuery("them_khachhang", para);
         }
-        public static int sua_khachhang(string ma, string ten, int sdt, string diachi)
+        public static int sua_khachhang(string ma, string ten, string sdt, string diachi)
         {
             SqlParameter[] para = new SqlParameter[]
             {
                 new SqlParameter("@ma",ma),
                 new SqlParameter("@ten",(ten!=null && ten.Trim()!="")?(object)ten:DBNull.Value),
-                new SqlParameter("@sdt",(sdt >0)?(object)sdt:DBNull.Value),
+                new SqlParameter("@sdt",(sdt != "")?(object)sdt:DBNull.Value),
                 new SqlParameter("@diachi",(diachi!=null && diachi.Trim()!="")?(object)diachi:DBNull.Value)
             };
             return DBConnect.ExecuteNonQuery("sua_khachhang", para);
@@ -209,6 +217,14 @@ namespace DAL
         #endregion
 
         #region HangHoa
+        public static void update_soluonghanghoa(string ma_hanghoa)
+        {
+            DBConnect.GetData(string.Format("declare @soluong int select @soluong = SUM(soluong) from chitietphieunhap where hanghoama = '{0}' if exists (select * from chitietphieuxuat where hanghoama = '{0}') select @soluong = @soluong - SUM(soluong) from chitietphieuxuat where hanghoama = '{0}' update hanghoa set soluong = @soluong where ma = '{0}'", ma_hanghoa));
+        }
+        public static DataTable get_giahanghoa(string ma_hanghoa)
+        {
+            return DBConnect.GetData("select max(gianhap) from chitietphieunhap where hanghoama = '" + ma_hanghoa + "'");
+        }
         public static DataTable get_hanghoa()
         {
             return DBConnect.GetData("get_hanghoa");
@@ -255,5 +271,110 @@ namespace DAL
 
         #endregion
 
+        #region Phieu Xuat
+        public static DataTable get_maphieuxuat()
+        {
+            return DBConnect.GetData("select max(ma) from phieuxuat");
+        }
+        public static DataTable get_phieuxuat(DateTime tu_ngay, DateTime den_ngay)
+        {
+            return DBConnect.GetData("select phieuxuat.ma as [Mã phiếu xuất], khachhang.ma as [Mã khách hàng], khachhang.ten as [Tên khách hàng], ngayxuat as [Ngày xuất], tongtien as [Tổng tiền], nhanvien.ma as [Mã nhân viên], nhanvien.ten as [Tên nhân viên] from phieuxuat join khachhang on phieuxuat.khachhangma = khachhang.ma join nhanvien on phieuxuat.nhanvienma = nhanvien.ma where ngayxuat >= " + string.Format("'{0}-{1}-{2}'", tu_ngay.Year, tu_ngay.Month, tu_ngay.Day) + " and ngayxuat <= " + string.Format("'{0}-{1}-{2}'", den_ngay.Year, den_ngay.Month, den_ngay.Day));
+        }
+        public static int them_phieuxuat(
+            string ma, 
+            string nhanvienma,
+            string khachhangma, 
+            DateTime ngayxuat, 
+            decimal tongtien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@ma", ma),
+                new SqlParameter("@nhanvienma", nhanvienma),
+                new SqlParameter("@khachhangma", khachhangma),
+                new SqlParameter("@ngayxuat", ngayxuat),
+                new SqlParameter("@tongtien", tongtien),
+            };
+            return DBConnect.ExecuteNonQuery("them_phieuxuat", para);
+        }
+        public static int sua_phieuxuat(
+            string ma,
+            string nhanvienma,
+            string khachhangma,
+            DateTime ngayxuat,
+            decimal tongtien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@ma", ma),
+                new SqlParameter("@nhanvienma", nhanvienma),
+                new SqlParameter("@khachhangma", khachhangma),
+                new SqlParameter("@ngayxuat", ngayxuat),
+                new SqlParameter("@tongtien", tongtien),
+            };
+            return DBConnect.ExecuteNonQuery("sua_phieuxuat", para);
+        }
+        public static int xoa_phieuxuat(string ma)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@ma", ma)
+            };
+            return DBConnect.ExecuteNonQuery("xoa_phieuxuat", para);
+        }
+        #endregion
+
+        #region Chi Tiet Phieu Xuat
+        public static DataTable get_chitietphieuxuat(string ma_phieuxuat)
+        {
+            return DBConnect.GetData("select chitietphieuxuat.hanghoama, hanghoa.ten, hanghoa.xuatxu, chitietphieuxuat.giaxuat, chitietphieuxuat.soluong, chitietphieuxuat.thanhtien from chitietphieuxuat join hanghoa on chitietphieuxuat.hanghoama = hanghoa.ma where chitietphieuxuat.phieuxuatma = '" + ma_phieuxuat + "'");
+        }
+        public static int them_chitietphieuxuat(
+            string phieuxuatma, 
+            string hanghoama, 
+            int soluong, 
+            string donvitinh, 
+            decimal giaxuat, 
+            decimal thanhtien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@phieuxuatma", phieuxuatma),
+                new SqlParameter("@hanghoama", hanghoama),
+                new SqlParameter("@soluong", soluong),
+                new SqlParameter("@donvitinh", donvitinh),
+                new SqlParameter("@giaxuat", giaxuat),
+                new SqlParameter("@thanhtien", thanhtien)
+            };
+            return DBConnect.ExecuteNonQuery("them_chitietphieuxuat", para);
+        }
+        public static int sua_chitietphieuxuat(
+            string phieuxuatma,
+            string hanghoama,
+            int soluong,
+            string donvitinh,
+            decimal giaxuat,
+            decimal thanhtien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@phieuxuatma", phieuxuatma),
+                new SqlParameter("@hanghoama", hanghoama),
+                new SqlParameter("@soluong", soluong),
+                new SqlParameter("@donvitinh", donvitinh),
+                new SqlParameter("@giaxuat", giaxuat),
+                new SqlParameter("@thanhtien", thanhtien)
+            };
+            return DBConnect.ExecuteNonQuery("sua_chitietphieuxuat", para);
+        }
+        public static int xoa_chitietphieuxuat(string phieuxuatma)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@phieuxuatma", phieuxuatma)
+            };
+            return DBConnect.ExecuteNonQuery("xoa_chitietphieuxuat", para);
+        }
+        #endregion
     }
 }

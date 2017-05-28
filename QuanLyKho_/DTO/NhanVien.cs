@@ -94,7 +94,7 @@ namespace DTO
             }
         }
 
-        public  DataTable get_nhanvien()
+        public static  DataTable get_nhanvien()
         {
             return DATA.get_nhanvien();
         }

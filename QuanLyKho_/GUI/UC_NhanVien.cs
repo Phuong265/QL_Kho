@@ -58,7 +58,7 @@ namespace GUI
 
         void HienThi()
         {
-            DataTable dt = nv.get_nhanvien();
+            DataTable dt = DTO.NhanVien.get_nhanvien();
             dgvNhanVien.DataSource = dt;
         }
         private void tsbThem_Click(object sender, EventArgs e)
