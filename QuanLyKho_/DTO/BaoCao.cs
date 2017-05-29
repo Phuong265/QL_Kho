@@ -72,16 +72,16 @@ namespace DTO
             string sql = "select sum(ctpx.soluong)as'slxuat' from  phieuxuat px join chitietphieuxuat ctpx on px.ma= ctpx.phieuxuatma where year(px.ngayxuat)="+nam+" and MONTH(px.ngayxuat)="+thang;
             return DBConnect.GetData(sql);
         }
-        public static DataTable get_soluongnhapngay(string nam, string ngay)
+        public static DataTable get_soluongnhapngay(DateTime dt)
         {
             string sql = "	select  distinct sum(ctpn.soluong)as'slnhap' from chitietphieunhap ctpn join phieunhap pn on ctpn.phieunhapma= pn.ma" +
-                " where year(pn.ngaynhap)=" + nam + "and (month(pn.ngaynhap)=" + ngay +")";
+                " where year(pn.ngaynhap)=" + dt.Year + "and (month(pn.ngaynhap)=" + dt.Month + " )and day(pn.ngaynhap)= "+dt.Day;
             return DBConnect.GetData(sql);
         }
-        public static DataTable get_soluongxuatngay(string nam, string ngay)
+        public static DataTable get_soluongxuatngay(DateTime dt)
         {
             string sql = "select sum(ctpx.soluong)as 'slxuat'  from  phieuxuat px join" +
-                " chitietphieuxuat ctpx on px.ma= ctpx.phieuxuatma  where year(px.ngayxuat)=" + nam + " and month(px.ngayxuat)=" + ngay ;
+                " chitietphieuxuat ctpx on px.ma= ctpx.phieuxuatma  where year(px.ngayxuat)=" + dt.Year + " and month(px.ngayxuat)=" + dt.Month+ " and day(px.ngayxuat)="+dt.Day ;
             return DBConnect.GetData(sql);
         }
         public static DataTable get_thang(string nam)
