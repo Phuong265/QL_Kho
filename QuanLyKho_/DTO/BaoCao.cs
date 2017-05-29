@@ -80,8 +80,8 @@ namespace DTO
         }
         public static DataTable get_soluongxuatngay(string nam, string ngay)
         {
-            string sql = "select sum(ctpn.soluong)as 'slxuat'  from  phieuxuat px join" +
-                " chitietphieuxuat ctpx on px.ma= ctpx.phieuxuatma  where year(px.ngayxuat)=" + nam + " and month(px.ngayxuat)=" + ngay +")";
+            string sql = "select sum(ctpx.soluong)as 'slxuat'  from  phieuxuat px join" +
+                " chitietphieuxuat ctpx on px.ma= ctpx.phieuxuatma  where year(px.ngayxuat)=" + nam + " and month(px.ngayxuat)=" + ngay ;
             return DBConnect.GetData(sql);
         }
         public static DataTable get_thang(string nam)
@@ -104,8 +104,8 @@ namespace DTO
         }
         public static DataTable SLxuatdaymonth(string nam, string thang)
         {
-            string sql = "				 select SUM(soluong) as'SL',day(ngayxuat) as 'DAY' from chitietphieuxuat join phieuxuat pn on " +
-                "pn.ma= chitietphietxuat.phieuxuatma where year(pn.ngayxuat)= " + nam + " and (month(pn.ngayxuat)=" + thang + "  ) group by ngayxuat";
+            string sql = "				 select SUM(soluong) as'SL',day(ngayxuat) as 'DAY' from chitietphieuxuat ct join phieuxuat pn on " +
+                "pn.ma= ct.phieuxuatma where year(pn.ngayxuat)= " + nam + " and (month(pn.ngayxuat)=" + thang + "  ) group by ngayxuat";
             return DBConnect.GetData(sql);
         }
         public static DataTable mathangnhapinday(DateTime time)
