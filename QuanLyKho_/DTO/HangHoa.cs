@@ -116,5 +116,19 @@ namespace DTO
         {
             return DATA.xoa_hanghoa(ma);
         }
+        public static decimal Get_GiaHangHoa(string ma_hanghoa)
+        {
+            decimal gia = 100000;
+            DataTable tb = DATA.get_giahanghoa(ma_hanghoa);
+            if(tb.Rows.Count > 0 && tb.Rows[0].ItemArray[0] != DBNull.Value)
+            {
+                gia = (decimal)tb.Rows[0].ItemArray[0];
+            }
+            return gia;
+        }
+        public static void Update_SoLuongHang(string ma_hanghoa)
+        {
+            DATA.update_soluonghanghoa(ma_hanghoa);
+        }
     }
 }
