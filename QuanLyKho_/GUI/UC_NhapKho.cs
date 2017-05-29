@@ -93,41 +93,73 @@ namespace GUI
             }
         }
 
+
+        int KT()
+        {
+            int colNumber = 0;
+            int dem = 0;
+
+            for (int i = 0; i <= dgvChiTietPhieuNhap.Rows.Count - 1; i++)
+            {
+                if (dgvChiTietPhieuNhap.Rows[i].IsNewRow) continue;
+
+                string tmp = dgvChiTietPhieuNhap.Rows[i].Cells[colNumber].Value.ToString();
+                if (tmp == cboMa.Text)
+                {
+                    dem++;
+                }
+            }
+            if (dem > 0)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-           
-
-            if (them == true)
+            if (KT() == 0)
             {
-                dgvChiTietPhieuNhap.Rows.Add();
-                int indexRow = dgvChiTietPhieuNhap.Rows.Count - 1;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[0].Value = cboMa.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[1].Value = txtTen.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[2].Value = cboNCC.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[3].Value = txtSL.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[4].Value = txtXuatXu.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[5].Value = txtGhichu.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[6].Value = cboDonViTinh.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[7].Value = txtGiaNhap.Text;
-                dgvChiTietPhieuNhap.Rows[indexRow].Cells[8].Value = txtThanhTien.Text;
-                SetNullHH();
-            }
 
+                if (them == true)
+                {
+                    dgvChiTietPhieuNhap.Rows.Add();
+                    int indexRow = dgvChiTietPhieuNhap.Rows.Count - 1;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[0].Value = cboMa.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[1].Value = txtTen.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[2].Value = cboNCC.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[3].Value = txtSL.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[4].Value = txtXuatXu.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[5].Value = txtGhichu.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[6].Value = cboDonViTinh.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[7].Value = txtGiaNhap.Text;
+                    dgvChiTietPhieuNhap.Rows[indexRow].Cells[8].Value = txtThanhTien.Text;
+                    SetNullHH();
+                }
+
+                else
+                {
+
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[0].Value = cboMa.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[1].Value = txtTen.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[2].Value = cboNCC.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[3].Value = txtSL.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[4].Value = txtXuatXu.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[5].Value = txtGhichu.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[6].Value = cboDonViTinh.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[7].Value = txtGiaNhap.Text;
+                    dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[8].Value = (decimal.Parse(txtSL.Text) * decimal.Parse(txtGiaNhap.Text)).ToString();
+                    SetNullHH();
+                }
+                them = true;
+            }
             else
             {
-
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[0].Value = cboMa.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[1].Value = txtTen.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[2].Value = cboNCC.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[3].Value = txtSL.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[4].Value = txtXuatXu.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[5].Value = txtGhichu.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[6].Value = cboDonViTinh.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[7].Value = txtGiaNhap.Text;
-                dgvChiTietPhieuNhap.Rows[dgvChiTietPhieuNhap.CurrentRow.Index].Cells[8].Value = (decimal.Parse(txtSL.Text)*decimal.Parse(txtGiaNhap.Text)).ToString();
+                MessageBox.Show("Hàng hoá đó dã được nhập!!!");
                 SetNullHH();
             }
-            them = true;
+
         }
 
         private void txtGiaNhap_TextChanged(object sender, EventArgs e)

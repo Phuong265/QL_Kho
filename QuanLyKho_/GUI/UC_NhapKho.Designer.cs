@@ -86,9 +86,6 @@
             this.cboDonViTinh.FormattingEnabled = true;
             this.cboDonViTinh.Items.AddRange(new object[] {
             "Cái",
-            "Gói",
-            "Kg",
-            "Chai",
             "Hộp"});
             this.cboDonViTinh.Location = new System.Drawing.Point(62, 206);
             this.cboDonViTinh.Name = "cboDonViTinh";
@@ -112,6 +109,7 @@
             this.cboMa.Size = new System.Drawing.Size(120, 21);
             this.cboMa.TabIndex = 21;
             this.cboMa.SelectedIndexChanged += new System.EventHandler(this.cboMa_SelectedIndexChanged);
+            this.cboMa.TextChanged += new System.EventHandler(this.cboMa_SelectedIndexChanged);
             // 
             // btnLuu
             // 
@@ -305,9 +303,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(17, 12);
+            this.button2.Location = new System.Drawing.Point(-1, -1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 23);
+            this.button2.Size = new System.Drawing.Size(40, 32);
             this.button2.TabIndex = 29;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = false;
