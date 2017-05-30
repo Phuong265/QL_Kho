@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.pnND = new System.Windows.Forms.Panel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,7 @@
             this.danhSáchHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.xNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnND = new System.Windows.Forms.Panel();
+            this.btnHD = new System.Windows.Forms.ToolStripButton();
             this.pnTieuDe.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -104,7 +105,8 @@
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton2,
             this.toolStripDropDownButton4,
-            this.toolStripDropDownButton3});
+            this.toolStripDropDownButton3,
+            this.btnHD});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(881, 25);
@@ -113,6 +115,14 @@
             this.toolStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseDown);
             this.toolStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.changenk_MouseMove);
             this.toolStrip1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseup);
+            // 
+            // pnND
+            // 
+            this.pnND.BackColor = System.Drawing.Color.White;
+            this.pnND.Location = new System.Drawing.Point(3, 82);
+            this.pnND.Name = "pnND";
+            this.pnND.Size = new System.Drawing.Size(881, 408);
+            this.pnND.TabIndex = 2;
             // 
             // toolStripDropDownButton1
             // 
@@ -132,7 +142,7 @@
             // 
             this.nhậpKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.nhậpKhoToolStripMenuItem.Name = "nhậpKhoToolStripMenuItem";
-            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.nhậpKhoToolStripMenuItem.Text = "Nhập Kho";
             this.nhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhoToolStripMenuItem_Click);
             // 
@@ -140,7 +150,7 @@
             // 
             this.xuấtKhoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.xuấtKhoToolStripMenuItem.Name = "xuấtKhoToolStripMenuItem";
-            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.xuấtKhoToolStripMenuItem.Text = "Xuất Kho";
             this.xuấtKhoToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhoToolStripMenuItem_Click);
             // 
@@ -204,17 +214,19 @@
             // xNTToolStripMenuItem
             // 
             this.xNTToolStripMenuItem.Name = "xNTToolStripMenuItem";
-            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xNTToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.xNTToolStripMenuItem.Text = "X-N-T";
             this.xNTToolStripMenuItem.Click += new System.EventHandler(this.xNTToolStripMenuItem_Click);
             // 
-            // pnND
+            // btnHD
             // 
-            this.pnND.BackColor = System.Drawing.Color.White;
-            this.pnND.Location = new System.Drawing.Point(3, 82);
-            this.pnND.Name = "pnND";
-            this.pnND.Size = new System.Drawing.Size(881, 408);
-            this.pnND.TabIndex = 2;
+            this.btnHD.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnHD.Image = ((System.Drawing.Image)(resources.GetObject("btnHD.Image")));
+            this.btnHD.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHD.Name = "btnHD";
+            this.btnHD.Size = new System.Drawing.Size(71, 22);
+            this.btnHD.Text = "Hướng dẫn";
+            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
             // 
             // frmMain
             // 
@@ -265,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem xNTToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
         private System.Windows.Forms.ToolStripMenuItem danhSáchHàngHóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnHD;
     }
 }
 

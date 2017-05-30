@@ -151,6 +151,12 @@ namespace GUI
             showControl(us);
         }
 
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            UserControl us = new UC_HD();
+            showControl(us);
+        }
+
         private void danhSáchHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UC_DSHangHoa hh = new UC_DSHangHoa();

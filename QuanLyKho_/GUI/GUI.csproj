@@ -95,6 +95,12 @@
     <Compile Include="UC_DSHangHoa.Designer.cs">
       <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_HD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HD.Designer.cs">
+      <DependentUpon>UC_HD.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DSHangHoa.resx">
       <DependentUpon>UC_DSHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HD.resx">
+      <DependentUpon>UC_HD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhaCungCap.resx">
       <DependentUpon>UC_NhaCungCap.cs</DependentUpon>

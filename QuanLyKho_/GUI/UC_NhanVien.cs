@@ -107,11 +107,11 @@ namespace GUI
 
         private void tsbLuu_Click(object sender, EventArgs e)
         {
-            if (txtMa.Text == "")
-            {
-                MessageBox.Show("Xin mời nhập thông tin đầy đủ!");
-                return;
-            }
+            //if (txtMa.Text == "")
+            //{
+            //    MessageBox.Show("Xin mời nhập thông tin đầy đủ!");
+            //    return;
+            //}
             if (ThemMoi == true)
             {
                 try
